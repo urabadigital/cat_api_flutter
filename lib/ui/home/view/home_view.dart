@@ -4,6 +4,8 @@ import 'package:pragma/core/home/domain/usecases/home_usecases.dart';
 import 'package:pragma/injectable_dependency.dart';
 import 'package:pragma/ui/home/view/home_mobil.dart';
 import 'package:pragma/ui/home/view/home_web.dart';
+import 'package:pragma/ui/navigation/cubit/navigation.dart';
+import 'package:pragma/ui/navigation/cubit/router_manager.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 // import '../../../core/presentation/cubit/dart_mode/theme_cubit.dart';
@@ -17,11 +19,20 @@ class HomeView extends StatelessWidget {
   static const String path = '/';
   static const String name = 'home';
 
-  static Widget create() => BlocProvider(
-        lazy: false,
-        create: (context) => HomeBloc(
-          homeUseCase: getIt<HomeUseCase>(),
-        )..add(const HomeEvent.loadCatList()),
+  static Widget create() => MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            lazy: false,
+            create: (context) => HomeBloc(
+              homeUseCase: getIt<HomeUseCase>(),
+            )..add(const HomeEvent.loadCatList()),
+          ),
+          BlocProvider.value(
+            value: HomeNavigation(
+              navigation: getIt<RouterManager>(),
+            ),
+          )
+        ],
         child: const HomeView(),
       );
 

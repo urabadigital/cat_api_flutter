@@ -22,6 +22,7 @@ mixin _$HomeEvent {
     required TResult Function() loadCatList,
     required TResult Function() getImageUrl,
     required TResult Function() refreshCats,
+    required TResult Function(String? search) search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$HomeEvent {
     TResult? Function()? loadCatList,
     TResult? Function()? getImageUrl,
     TResult? Function()? refreshCats,
+    TResult? Function(String? search)? search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$HomeEvent {
     TResult Function()? loadCatList,
     TResult Function()? getImageUrl,
     TResult Function()? refreshCats,
+    TResult Function(String? search)? search,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$HomeEvent {
     required TResult Function(_LoadCatList value) loadCatList,
     required TResult Function(_GetImageUrl value) getImageUrl,
     required TResult Function(_RefreshCats value) refreshCats,
+    required TResult Function(_Search value) search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$HomeEvent {
     TResult? Function(_LoadCatList value)? loadCatList,
     TResult? Function(_GetImageUrl value)? getImageUrl,
     TResult? Function(_RefreshCats value)? refreshCats,
+    TResult? Function(_Search value)? search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$HomeEvent {
     TResult Function(_LoadCatList value)? loadCatList,
     TResult Function(_GetImageUrl value)? getImageUrl,
     TResult Function(_RefreshCats value)? refreshCats,
+    TResult Function(_Search value)? search,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,6 +133,7 @@ class _$StartedImpl implements _Started {
     required TResult Function() loadCatList,
     required TResult Function() getImageUrl,
     required TResult Function() refreshCats,
+    required TResult Function(String? search) search,
   }) {
     return started();
   }
@@ -138,6 +145,7 @@ class _$StartedImpl implements _Started {
     TResult? Function()? loadCatList,
     TResult? Function()? getImageUrl,
     TResult? Function()? refreshCats,
+    TResult? Function(String? search)? search,
   }) {
     return started?.call();
   }
@@ -149,6 +157,7 @@ class _$StartedImpl implements _Started {
     TResult Function()? loadCatList,
     TResult Function()? getImageUrl,
     TResult Function()? refreshCats,
+    TResult Function(String? search)? search,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -164,6 +173,7 @@ class _$StartedImpl implements _Started {
     required TResult Function(_LoadCatList value) loadCatList,
     required TResult Function(_GetImageUrl value) getImageUrl,
     required TResult Function(_RefreshCats value) refreshCats,
+    required TResult Function(_Search value) search,
   }) {
     return started(this);
   }
@@ -175,6 +185,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(_LoadCatList value)? loadCatList,
     TResult? Function(_GetImageUrl value)? getImageUrl,
     TResult? Function(_RefreshCats value)? refreshCats,
+    TResult? Function(_Search value)? search,
   }) {
     return started?.call(this);
   }
@@ -186,6 +197,7 @@ class _$StartedImpl implements _Started {
     TResult Function(_LoadCatList value)? loadCatList,
     TResult Function(_GetImageUrl value)? getImageUrl,
     TResult Function(_RefreshCats value)? refreshCats,
+    TResult Function(_Search value)? search,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -241,6 +253,7 @@ class _$LoadCatListImpl implements _LoadCatList {
     required TResult Function() loadCatList,
     required TResult Function() getImageUrl,
     required TResult Function() refreshCats,
+    required TResult Function(String? search) search,
   }) {
     return loadCatList();
   }
@@ -252,6 +265,7 @@ class _$LoadCatListImpl implements _LoadCatList {
     TResult? Function()? loadCatList,
     TResult? Function()? getImageUrl,
     TResult? Function()? refreshCats,
+    TResult? Function(String? search)? search,
   }) {
     return loadCatList?.call();
   }
@@ -263,6 +277,7 @@ class _$LoadCatListImpl implements _LoadCatList {
     TResult Function()? loadCatList,
     TResult Function()? getImageUrl,
     TResult Function()? refreshCats,
+    TResult Function(String? search)? search,
     required TResult orElse(),
   }) {
     if (loadCatList != null) {
@@ -278,6 +293,7 @@ class _$LoadCatListImpl implements _LoadCatList {
     required TResult Function(_LoadCatList value) loadCatList,
     required TResult Function(_GetImageUrl value) getImageUrl,
     required TResult Function(_RefreshCats value) refreshCats,
+    required TResult Function(_Search value) search,
   }) {
     return loadCatList(this);
   }
@@ -289,6 +305,7 @@ class _$LoadCatListImpl implements _LoadCatList {
     TResult? Function(_LoadCatList value)? loadCatList,
     TResult? Function(_GetImageUrl value)? getImageUrl,
     TResult? Function(_RefreshCats value)? refreshCats,
+    TResult? Function(_Search value)? search,
   }) {
     return loadCatList?.call(this);
   }
@@ -300,6 +317,7 @@ class _$LoadCatListImpl implements _LoadCatList {
     TResult Function(_LoadCatList value)? loadCatList,
     TResult Function(_GetImageUrl value)? getImageUrl,
     TResult Function(_RefreshCats value)? refreshCats,
+    TResult Function(_Search value)? search,
     required TResult orElse(),
   }) {
     if (loadCatList != null) {
@@ -355,6 +373,7 @@ class _$GetImageUrlImpl implements _GetImageUrl {
     required TResult Function() loadCatList,
     required TResult Function() getImageUrl,
     required TResult Function() refreshCats,
+    required TResult Function(String? search) search,
   }) {
     return getImageUrl();
   }
@@ -366,6 +385,7 @@ class _$GetImageUrlImpl implements _GetImageUrl {
     TResult? Function()? loadCatList,
     TResult? Function()? getImageUrl,
     TResult? Function()? refreshCats,
+    TResult? Function(String? search)? search,
   }) {
     return getImageUrl?.call();
   }
@@ -377,6 +397,7 @@ class _$GetImageUrlImpl implements _GetImageUrl {
     TResult Function()? loadCatList,
     TResult Function()? getImageUrl,
     TResult Function()? refreshCats,
+    TResult Function(String? search)? search,
     required TResult orElse(),
   }) {
     if (getImageUrl != null) {
@@ -392,6 +413,7 @@ class _$GetImageUrlImpl implements _GetImageUrl {
     required TResult Function(_LoadCatList value) loadCatList,
     required TResult Function(_GetImageUrl value) getImageUrl,
     required TResult Function(_RefreshCats value) refreshCats,
+    required TResult Function(_Search value) search,
   }) {
     return getImageUrl(this);
   }
@@ -403,6 +425,7 @@ class _$GetImageUrlImpl implements _GetImageUrl {
     TResult? Function(_LoadCatList value)? loadCatList,
     TResult? Function(_GetImageUrl value)? getImageUrl,
     TResult? Function(_RefreshCats value)? refreshCats,
+    TResult? Function(_Search value)? search,
   }) {
     return getImageUrl?.call(this);
   }
@@ -414,6 +437,7 @@ class _$GetImageUrlImpl implements _GetImageUrl {
     TResult Function(_LoadCatList value)? loadCatList,
     TResult Function(_GetImageUrl value)? getImageUrl,
     TResult Function(_RefreshCats value)? refreshCats,
+    TResult Function(_Search value)? search,
     required TResult orElse(),
   }) {
     if (getImageUrl != null) {
@@ -469,6 +493,7 @@ class _$RefreshCatsImpl implements _RefreshCats {
     required TResult Function() loadCatList,
     required TResult Function() getImageUrl,
     required TResult Function() refreshCats,
+    required TResult Function(String? search) search,
   }) {
     return refreshCats();
   }
@@ -480,6 +505,7 @@ class _$RefreshCatsImpl implements _RefreshCats {
     TResult? Function()? loadCatList,
     TResult? Function()? getImageUrl,
     TResult? Function()? refreshCats,
+    TResult? Function(String? search)? search,
   }) {
     return refreshCats?.call();
   }
@@ -491,6 +517,7 @@ class _$RefreshCatsImpl implements _RefreshCats {
     TResult Function()? loadCatList,
     TResult Function()? getImageUrl,
     TResult Function()? refreshCats,
+    TResult Function(String? search)? search,
     required TResult orElse(),
   }) {
     if (refreshCats != null) {
@@ -506,6 +533,7 @@ class _$RefreshCatsImpl implements _RefreshCats {
     required TResult Function(_LoadCatList value) loadCatList,
     required TResult Function(_GetImageUrl value) getImageUrl,
     required TResult Function(_RefreshCats value) refreshCats,
+    required TResult Function(_Search value) search,
   }) {
     return refreshCats(this);
   }
@@ -517,6 +545,7 @@ class _$RefreshCatsImpl implements _RefreshCats {
     TResult? Function(_LoadCatList value)? loadCatList,
     TResult? Function(_GetImageUrl value)? getImageUrl,
     TResult? Function(_RefreshCats value)? refreshCats,
+    TResult? Function(_Search value)? search,
   }) {
     return refreshCats?.call(this);
   }
@@ -528,6 +557,7 @@ class _$RefreshCatsImpl implements _RefreshCats {
     TResult Function(_LoadCatList value)? loadCatList,
     TResult Function(_GetImageUrl value)? getImageUrl,
     TResult Function(_RefreshCats value)? refreshCats,
+    TResult Function(_Search value)? search,
     required TResult orElse(),
   }) {
     if (refreshCats != null) {
@@ -542,10 +572,163 @@ abstract class _RefreshCats implements HomeEvent {
 }
 
 /// @nodoc
+abstract class _$$SearchImplCopyWith<$Res> {
+  factory _$$SearchImplCopyWith(
+          _$SearchImpl value, $Res Function(_$SearchImpl) then) =
+      __$$SearchImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String? search});
+}
+
+/// @nodoc
+class __$$SearchImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$SearchImpl>
+    implements _$$SearchImplCopyWith<$Res> {
+  __$$SearchImplCopyWithImpl(
+      _$SearchImpl _value, $Res Function(_$SearchImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? search = freezed,
+  }) {
+    return _then(_$SearchImpl(
+      search: freezed == search
+          ? _value.search
+          : search // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SearchImpl implements _Search {
+  const _$SearchImpl({this.search});
+
+  @override
+  final String? search;
+
+  @override
+  String toString() {
+    return 'HomeEvent.search(search: $search)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SearchImpl &&
+            (identical(other.search, search) || other.search == search));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, search);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SearchImplCopyWith<_$SearchImpl> get copyWith =>
+      __$$SearchImplCopyWithImpl<_$SearchImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() loadCatList,
+    required TResult Function() getImageUrl,
+    required TResult Function() refreshCats,
+    required TResult Function(String? search) search,
+  }) {
+    return search(this.search);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? loadCatList,
+    TResult? Function()? getImageUrl,
+    TResult? Function()? refreshCats,
+    TResult? Function(String? search)? search,
+  }) {
+    return search?.call(this.search);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? loadCatList,
+    TResult Function()? getImageUrl,
+    TResult Function()? refreshCats,
+    TResult Function(String? search)? search,
+    required TResult orElse(),
+  }) {
+    if (search != null) {
+      return search(this.search);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_LoadCatList value) loadCatList,
+    required TResult Function(_GetImageUrl value) getImageUrl,
+    required TResult Function(_RefreshCats value) refreshCats,
+    required TResult Function(_Search value) search,
+  }) {
+    return search(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_LoadCatList value)? loadCatList,
+    TResult? Function(_GetImageUrl value)? getImageUrl,
+    TResult? Function(_RefreshCats value)? refreshCats,
+    TResult? Function(_Search value)? search,
+  }) {
+    return search?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_LoadCatList value)? loadCatList,
+    TResult Function(_GetImageUrl value)? getImageUrl,
+    TResult Function(_RefreshCats value)? refreshCats,
+    TResult Function(_Search value)? search,
+    required TResult orElse(),
+  }) {
+    if (search != null) {
+      return search(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Search implements HomeEvent {
+  const factory _Search({final String? search}) = _$SearchImpl;
+
+  String? get search;
+  @JsonKey(ignore: true)
+  _$$SearchImplCopyWith<_$SearchImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$HomeState {
   Failure? get failure => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoadingImage => throw _privateConstructorUsedError;
   List<CatEntity> get cat => throw _privateConstructorUsedError;
+  List<CatEntity> get oldCat => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeStateCopyWith<HomeState> get copyWith =>
@@ -557,7 +740,12 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
-  $Res call({Failure? failure, bool isLoading, List<CatEntity> cat});
+  $Res call(
+      {Failure? failure,
+      bool isLoading,
+      bool isLoadingImage,
+      List<CatEntity> cat,
+      List<CatEntity> oldCat});
 }
 
 /// @nodoc
@@ -575,7 +763,9 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   $Res call({
     Object? failure = freezed,
     Object? isLoading = null,
+    Object? isLoadingImage = null,
     Object? cat = null,
+    Object? oldCat = null,
   }) {
     return _then(_value.copyWith(
       failure: freezed == failure
@@ -586,9 +776,17 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      isLoadingImage: null == isLoadingImage
+          ? _value.isLoadingImage
+          : isLoadingImage // ignore: cast_nullable_to_non_nullable
+              as bool,
       cat: null == cat
           ? _value.cat
           : cat // ignore: cast_nullable_to_non_nullable
+              as List<CatEntity>,
+      oldCat: null == oldCat
+          ? _value.oldCat
+          : oldCat // ignore: cast_nullable_to_non_nullable
               as List<CatEntity>,
     ) as $Val);
   }
@@ -602,7 +800,12 @@ abstract class _$$InitialImplCopyWith<$Res>
       __$$InitialImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Failure? failure, bool isLoading, List<CatEntity> cat});
+  $Res call(
+      {Failure? failure,
+      bool isLoading,
+      bool isLoadingImage,
+      List<CatEntity> cat,
+      List<CatEntity> oldCat});
 }
 
 /// @nodoc
@@ -618,7 +821,9 @@ class __$$InitialImplCopyWithImpl<$Res>
   $Res call({
     Object? failure = freezed,
     Object? isLoading = null,
+    Object? isLoadingImage = null,
     Object? cat = null,
+    Object? oldCat = null,
   }) {
     return _then(_$InitialImpl(
       failure: freezed == failure
@@ -629,9 +834,17 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      isLoadingImage: null == isLoadingImage
+          ? _value.isLoadingImage
+          : isLoadingImage // ignore: cast_nullable_to_non_nullable
+              as bool,
       cat: null == cat
           ? _value._cat
           : cat // ignore: cast_nullable_to_non_nullable
+              as List<CatEntity>,
+      oldCat: null == oldCat
+          ? _value._oldCat
+          : oldCat // ignore: cast_nullable_to_non_nullable
               as List<CatEntity>,
     ));
   }
@@ -643,14 +856,20 @@ class _$InitialImpl implements _Initial {
   const _$InitialImpl(
       {this.failure,
       this.isLoading = false,
-      final List<CatEntity> cat = const []})
-      : _cat = cat;
+      this.isLoadingImage = false,
+      final List<CatEntity> cat = const [],
+      final List<CatEntity> oldCat = const []})
+      : _cat = cat,
+        _oldCat = oldCat;
 
   @override
   final Failure? failure;
   @override
   @JsonKey()
   final bool isLoading;
+  @override
+  @JsonKey()
+  final bool isLoadingImage;
   final List<CatEntity> _cat;
   @override
   @JsonKey()
@@ -660,9 +879,18 @@ class _$InitialImpl implements _Initial {
     return EqualUnmodifiableListView(_cat);
   }
 
+  final List<CatEntity> _oldCat;
+  @override
+  @JsonKey()
+  List<CatEntity> get oldCat {
+    if (_oldCat is EqualUnmodifiableListView) return _oldCat;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_oldCat);
+  }
+
   @override
   String toString() {
-    return 'HomeState(failure: $failure, isLoading: $isLoading, cat: $cat)';
+    return 'HomeState(failure: $failure, isLoading: $isLoading, isLoadingImage: $isLoadingImage, cat: $cat, oldCat: $oldCat)';
   }
 
   @override
@@ -673,12 +901,20 @@ class _$InitialImpl implements _Initial {
             (identical(other.failure, failure) || other.failure == failure) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
-            const DeepCollectionEquality().equals(other._cat, _cat));
+            (identical(other.isLoadingImage, isLoadingImage) ||
+                other.isLoadingImage == isLoadingImage) &&
+            const DeepCollectionEquality().equals(other._cat, _cat) &&
+            const DeepCollectionEquality().equals(other._oldCat, _oldCat));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, failure, isLoading,
-      const DeepCollectionEquality().hash(_cat));
+  int get hashCode => Object.hash(
+      runtimeType,
+      failure,
+      isLoading,
+      isLoadingImage,
+      const DeepCollectionEquality().hash(_cat),
+      const DeepCollectionEquality().hash(_oldCat));
 
   @JsonKey(ignore: true)
   @override
@@ -691,14 +927,20 @@ abstract class _Initial implements HomeState {
   const factory _Initial(
       {final Failure? failure,
       final bool isLoading,
-      final List<CatEntity> cat}) = _$InitialImpl;
+      final bool isLoadingImage,
+      final List<CatEntity> cat,
+      final List<CatEntity> oldCat}) = _$InitialImpl;
 
   @override
   Failure? get failure;
   @override
   bool get isLoading;
   @override
+  bool get isLoadingImage;
+  @override
   List<CatEntity> get cat;
+  @override
+  List<CatEntity> get oldCat;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>

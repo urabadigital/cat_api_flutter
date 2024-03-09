@@ -19,19 +19,19 @@ mixin _$DetailEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String referenceImageId) detail,
+    required TResult Function(CatEntity cat) detail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String referenceImageId)? detail,
+    TResult? Function(CatEntity cat)? detail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String referenceImageId)? detail,
+    TResult Function(CatEntity cat)? detail,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,7 +113,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String referenceImageId) detail,
+    required TResult Function(CatEntity cat) detail,
   }) {
     return started();
   }
@@ -122,7 +122,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String referenceImageId)? detail,
+    TResult? Function(CatEntity cat)? detail,
   }) {
     return started?.call();
   }
@@ -131,7 +131,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String referenceImageId)? detail,
+    TResult Function(CatEntity cat)? detail,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -182,7 +182,7 @@ abstract class _$$DetailImplCopyWith<$Res> {
           _$DetailImpl value, $Res Function(_$DetailImpl) then) =
       __$$DetailImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String referenceImageId});
+  $Res call({CatEntity cat});
 }
 
 /// @nodoc
@@ -196,13 +196,13 @@ class __$$DetailImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? referenceImageId = null,
+    Object? cat = null,
   }) {
     return _then(_$DetailImpl(
-      null == referenceImageId
-          ? _value.referenceImageId
-          : referenceImageId // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == cat
+          ? _value.cat
+          : cat // ignore: cast_nullable_to_non_nullable
+              as CatEntity,
     ));
   }
 }
@@ -210,14 +210,14 @@ class __$$DetailImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$DetailImpl implements _Detail {
-  const _$DetailImpl(this.referenceImageId);
+  const _$DetailImpl(this.cat);
 
   @override
-  final String referenceImageId;
+  final CatEntity cat;
 
   @override
   String toString() {
-    return 'DetailEvent.detail(referenceImageId: $referenceImageId)';
+    return 'DetailEvent.detail(cat: $cat)';
   }
 
   @override
@@ -225,12 +225,11 @@ class _$DetailImpl implements _Detail {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DetailImpl &&
-            (identical(other.referenceImageId, referenceImageId) ||
-                other.referenceImageId == referenceImageId));
+            (identical(other.cat, cat) || other.cat == cat));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, referenceImageId);
+  int get hashCode => Object.hash(runtimeType, cat);
 
   @JsonKey(ignore: true)
   @override
@@ -242,29 +241,29 @@ class _$DetailImpl implements _Detail {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String referenceImageId) detail,
+    required TResult Function(CatEntity cat) detail,
   }) {
-    return detail(referenceImageId);
+    return detail(cat);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String referenceImageId)? detail,
+    TResult? Function(CatEntity cat)? detail,
   }) {
-    return detail?.call(referenceImageId);
+    return detail?.call(cat);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String referenceImageId)? detail,
+    TResult Function(CatEntity cat)? detail,
     required TResult orElse(),
   }) {
     if (detail != null) {
-      return detail(referenceImageId);
+      return detail(cat);
     }
     return orElse();
   }
@@ -302,9 +301,9 @@ class _$DetailImpl implements _Detail {
 }
 
 abstract class _Detail implements DetailEvent {
-  const factory _Detail(final String referenceImageId) = _$DetailImpl;
+  const factory _Detail(final CatEntity cat) = _$DetailImpl;
 
-  String get referenceImageId;
+  CatEntity get cat;
   @JsonKey(ignore: true)
   _$$DetailImplCopyWith<_$DetailImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -314,7 +313,7 @@ abstract class _Detail implements DetailEvent {
 mixin _$DetailState {
   bool get isLoading => throw _privateConstructorUsedError;
   Failure? get failure => throw _privateConstructorUsedError;
-  CatDetailModel? get cat => throw _privateConstructorUsedError;
+  CatDetailModel get cat => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DetailStateCopyWith<DetailState> get copyWith =>
@@ -327,7 +326,7 @@ abstract class $DetailStateCopyWith<$Res> {
           DetailState value, $Res Function(DetailState) then) =
       _$DetailStateCopyWithImpl<$Res, DetailState>;
   @useResult
-  $Res call({bool isLoading, Failure? failure, CatDetailModel? cat});
+  $Res call({bool isLoading, Failure? failure, CatDetailModel cat});
 }
 
 /// @nodoc
@@ -345,7 +344,7 @@ class _$DetailStateCopyWithImpl<$Res, $Val extends DetailState>
   $Res call({
     Object? isLoading = null,
     Object? failure = freezed,
-    Object? cat = freezed,
+    Object? cat = null,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
@@ -356,10 +355,10 @@ class _$DetailStateCopyWithImpl<$Res, $Val extends DetailState>
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as Failure?,
-      cat: freezed == cat
+      cat: null == cat
           ? _value.cat
           : cat // ignore: cast_nullable_to_non_nullable
-              as CatDetailModel?,
+              as CatDetailModel,
     ) as $Val);
   }
 }
@@ -372,7 +371,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       __$$InitialImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoading, Failure? failure, CatDetailModel? cat});
+  $Res call({bool isLoading, Failure? failure, CatDetailModel cat});
 }
 
 /// @nodoc
@@ -388,7 +387,7 @@ class __$$InitialImplCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = null,
     Object? failure = freezed,
-    Object? cat = freezed,
+    Object? cat = null,
   }) {
     return _then(_$InitialImpl(
       isLoading: null == isLoading
@@ -399,10 +398,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as Failure?,
-      cat: freezed == cat
+      cat: null == cat
           ? _value.cat
           : cat // ignore: cast_nullable_to_non_nullable
-              as CatDetailModel?,
+              as CatDetailModel,
     ));
   }
 }
@@ -410,7 +409,8 @@ class __$$InitialImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$InitialImpl implements _Initial {
-  const _$InitialImpl({this.isLoading = false, this.failure, this.cat});
+  const _$InitialImpl(
+      {this.isLoading = false, this.failure, required this.cat});
 
   @override
   @JsonKey()
@@ -418,7 +418,7 @@ class _$InitialImpl implements _Initial {
   @override
   final Failure? failure;
   @override
-  final CatDetailModel? cat;
+  final CatDetailModel cat;
 
   @override
   String toString() {
@@ -450,14 +450,14 @@ abstract class _Initial implements DetailState {
   const factory _Initial(
       {final bool isLoading,
       final Failure? failure,
-      final CatDetailModel? cat}) = _$InitialImpl;
+      required final CatDetailModel cat}) = _$InitialImpl;
 
   @override
   bool get isLoading;
   @override
   Failure? get failure;
   @override
-  CatDetailModel? get cat;
+  CatDetailModel get cat;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>

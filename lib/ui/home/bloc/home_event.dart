@@ -6,4 +6,7 @@ class HomeEvent with _$HomeEvent {
   const factory HomeEvent.loadCatList() = _LoadCatList;
   const factory HomeEvent.getImageUrl() = _GetImageUrl;
   const factory HomeEvent.refreshCats() = _RefreshCats;
+  const factory HomeEvent.search({
+    String? search,
+  }) = _Search;
 }

@@ -10,6 +10,7 @@ import '../models/cat.dart';
 
 abstract class IHomeDatasource {
   Future<List<CatModel>> getCatList();
+  Future<String?> getImageUrl(String url);
   Future<List<CatEntity>> getImageList(List<CatEntity> catList);
   Future<CatDetailModel> getCatDetail(String referenceImageId);
 }
@@ -54,6 +55,7 @@ class HomeDatasource implements IHomeDatasource {
     return newlist;
   }
 
+  @override
   Future<String?> getImageUrl(String idImages) async {
     Map<String, dynamic> response = (await baseClient.get(
       path: EndPoint.images.toParamUrl(<String, dynamic>{

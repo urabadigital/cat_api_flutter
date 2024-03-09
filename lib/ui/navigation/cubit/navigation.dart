@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pragma/core/home/domain/entities/entities.dart';
 
 // import '../../../../ui/home/view/movie_detail_view.dart';
 import 'router_manager.dart';
@@ -11,8 +12,8 @@ class HomeNavigation extends Cubit<void> {
     navigation.pop();
   }
 
-  void navigateCatDetails(String route, {required String referenceImageId}) {
-    navigation.push('/$route/$referenceImageId');
+  void navigateCatDetails(String route, {required CatEntity cat}) {
+    navigation.push(route, extra: cat);
     // navigation.goNamed(route, pathParams: {'id': referenceImageId});
   }
 }

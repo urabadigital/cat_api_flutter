@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pragma/ui/home/bloc/home_bloc.dart';
 
-class MoviesSearchBar extends StatefulWidget {
-  const MoviesSearchBar({super.key});
+class CatSearchBar extends StatefulWidget {
+  const CatSearchBar({super.key});
 
   @override
-  State<MoviesSearchBar> createState() => _SearchBarState();
+  State<CatSearchBar> createState() => _CatSearchBarState();
 }
 
-class _SearchBarState extends State<MoviesSearchBar> {
+class _CatSearchBarState extends State<CatSearchBar> {
   final _controller = TextEditingController();
 
   @override
@@ -50,7 +52,11 @@ class _SearchBarState extends State<MoviesSearchBar> {
                       onEditingComplete: () {
                         FocusManager.instance.primaryFocus?.unfocus();
                       },
-                      onChanged: (text) {},
+                      onChanged: (text) {
+                        context.read<HomeBloc>().add(
+                              HomeEvent.search(search: text),
+                            );
+                      },
                     ),
                   ),
                 ),

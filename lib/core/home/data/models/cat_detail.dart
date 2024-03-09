@@ -16,6 +16,7 @@ class CatDetailModel extends CatModel {
           json['breeds'].map((x) => CatModel.fromJson(x)),
         ),
       );
+  factory CatDetailModel.empty() => const CatDetailModel();
 }
 
 extension CastMapper on CatDetailModel {

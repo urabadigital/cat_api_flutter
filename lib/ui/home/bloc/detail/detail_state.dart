@@ -5,6 +5,10 @@ class DetailState with _$DetailState {
   const factory DetailState({
     @Default(false) bool isLoading,
     Failure? failure,
-    CatDetailModel? cat,
+    required CatDetailModel cat,
   }) = _Initial;
+
+  factory DetailState.initial() => DetailState(
+    cat: CatDetailModel.empty()
+  );
 }

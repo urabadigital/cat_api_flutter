@@ -12,9 +12,10 @@ class RouterManager extends Cubit<GoRouter> {
     state.pop();
   }
 
-  void push(String route) {
-    state.push(route);
+  void push(String route, {Object? extra}) {
+    state.push(route, extra: extra);
   }
+
   void replace(String route) {
     state.replace(route);
   }

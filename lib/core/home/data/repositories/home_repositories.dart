@@ -40,6 +40,29 @@ class HomeRepositoryImpl implements IHomeRepository {
   }
 
   @override
+  Future<Either<Failure, String>> getImageUrl(String url) async {
+    try {
+      final String? image = await homeDatasource.getImageUrl(url);
+      return Right(image ?? '');
+    } on BaseClientException catch (e) {
+      log(e.toString());
+      if (e.type == 'SocketException') {
+        return const Left(NetworkFailure());
+      }
+      if (e.type == 'TimeoutException') {
+        return const Left(TimeOutFailure());
+      }
+      if (e.type == 'UnAuthorization') {
+        return const Left(AuthFailure());
+      }
+      return const Left(AnotherFailure());
+    } catch (e) {
+      log(e.toString());
+      return const Left(AnotherFailure());
+    }
+  }
+
+  @override
   Future<Either<Failure, List<CatEntity>>> getImageList(
       List<CatEntity> catList) async {
     try {

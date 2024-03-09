@@ -7,6 +7,8 @@ import '../entities/entities.dart';
 abstract class IHomeRepository {
   Future<Either<Failure, List<CatEntity>>> getCatList();
   Future<Either<Failure, List<CatEntity>>> getImageList(
-      List<CatEntity> catList);
+    List<CatEntity> catList,
+  );
+  Future<Either<Failure, String>> getImageUrl(String referenceImageId);
   Future<Either<Failure, CatDetailModel>> getCatDetail(String referenceImageId);
 }

@@ -15,6 +15,10 @@ class HomeUseCase {
     return homeRepository.getCatList();
   }
 
+  Future<Either<Failure, String>> getImageUrl(String referenceImageId) async {
+    return homeRepository.getImageUrl(referenceImageId);
+  }
+
   Future<Either<Failure, List<CatEntity>>> getImageList(
       List<CatEntity> catList) async {
     return homeRepository.getImageList(catList);
