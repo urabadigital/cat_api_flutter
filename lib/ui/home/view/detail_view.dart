@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pragma/injectable_dependency.dart';
 import 'package:pragma/ui/home/bloc/detail/detail_bloc.dart';
-import 'package:pragma/ui/home/view/home_view.dart';
 import 'package:pragma/ui/navigation/cubit/router_manager.dart';
 
 import '../../../core/home/domain/usecases/home_usecases.dart';
@@ -59,7 +58,7 @@ class CatDetailView extends StatelessWidget {
                       child: CachedNetworkImage(
                         filterQuality: FilterQuality.medium,
                         fit: BoxFit.cover,
-                        height: 300,
+                        height: 400,
                         width: double.infinity,
                         imageUrl: state.cat?.url ?? '',
                         placeholder: (context, url) => Container(
@@ -81,6 +80,7 @@ class CatDetailView extends StatelessWidget {
                       ),
                     ),
                   ),
+                  const SizedBox(height: 20),
                   Expanded(
                     child: SingleChildScrollView(
                       child: Column(
@@ -150,7 +150,7 @@ class CatDetailView extends StatelessWidget {
                                         fontWeight: FontWeight.w300,
                                       ),
                                     ),
-                                    const SizedBox(height: 30),
+                                    const SizedBox(height: 50),
                                   ],
                                 ),
                               ),
@@ -165,8 +165,10 @@ class CatDetailView extends StatelessWidget {
             ),
           );
         } else {
-          return const Center(
-            child: CircularProgressIndicator(),
+          return const Scaffold(
+            body: Center(
+              child: CircularProgressIndicator(),
+            ),
           );
         }
       },
