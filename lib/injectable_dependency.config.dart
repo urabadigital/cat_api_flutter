@@ -29,7 +29,7 @@ extension GetItInjectableX on _i1.GetIt {
       environment,
       environmentFilter,
     );
-    gh.singleton<_i3.Env>(_i3.Env());
+    gh.factory<_i3.Env>(() => _i3.Env());
     gh.lazySingleton<_i4.BaseClient>(() => _i4.BaseClient(gh<_i3.Env>()));
     gh.factory<_i5.IHomeDatasource>(
         () => _i5.HomeDatasource(baseClient: gh<_i4.BaseClient>()));

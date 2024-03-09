@@ -3,7 +3,7 @@ import 'package:injectable/injectable.dart';
 
 part 'env.g.dart';
 
-@singleton
+@injectable
 @Envied(path: '.env', useConstantCase: true)
 final class Env {
   @EnviedField(varName: 'API_KEY', obfuscate: true)
