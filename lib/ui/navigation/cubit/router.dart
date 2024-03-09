@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
+import 'package:pragma/ui/home/view/detail_view.dart';
 import 'package:pragma/ui/splash/splash.dart';
 
 // import '../../../../ui/favorite/router.dart';
@@ -27,6 +28,16 @@ GoRouter router = GoRouter(
         child: const SplashView(),
       ),
     ),
+    GoRoute(
+          path: CatDetailView.path,
+          name: CatDetailView.name,
+          pageBuilder: (context, state) => NoTransitionPage(
+            key: state.pageKey,
+            child: CatDetailView.create(
+              referenceImageId: state.pathParameters['id'] as String,
+            ),
+          ),
+        ),
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) {
         return SelectionArea(

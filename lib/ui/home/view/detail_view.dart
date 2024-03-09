@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pragma/injectable_dependency.dart';
 import 'package:pragma/ui/home/bloc/detail/detail_bloc.dart';
+import 'package:pragma/ui/home/view/home_view.dart';
+import 'package:pragma/ui/navigation/cubit/router_manager.dart';
 
 import '../../../core/home/domain/usecases/home_usecases.dart';
 
 class CatDetailView extends StatelessWidget {
   const CatDetailView({super.key});
 
-  static const String path = 'cat/:id';
+  static const String path = '/cat/:id';
   static const String name = 'cat';
 
   static Widget create({String? referenceImageId}) => BlocProvider(
@@ -30,6 +32,21 @@ class CatDetailView extends StatelessWidget {
               forceMaterialTransparency: true,
               centerTitle: true,
               title: Text(state.cat?.breeds?.first.name ?? ''),
+              leading: IconButton(
+                icon: Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Theme.of(context).colorScheme.primary),
+                  alignment: Alignment.center,
+                  child: Icon(Icons.chevron_left,
+                      color: Theme.of(context).cardColor),
+                ),
+                onPressed: () {
+                  context.read<RouterManager>().pop();
+                },
+              ),
             ),
             body: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),

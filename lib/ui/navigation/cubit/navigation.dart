@@ -12,6 +12,7 @@ class HomeNavigation extends Cubit<void> {
   }
 
   void navigateCatDetails(String route, {required String referenceImageId}) {
-    navigation.goNamed(route, pathParams: {'id': referenceImageId});
+    navigation.push('/$route/$referenceImageId');
+    // navigation.goNamed(route, pathParams: {'id': referenceImageId});
   }
 }
