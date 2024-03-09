@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
-import 'package:pragma/ui/home/view/home_view.dart';
+import 'package:pragma/ui/splash/splash.dart';
 
 // import '../../../../ui/favorite/router.dart';
 import '../../home/router.dart';
@@ -16,9 +16,17 @@ final _rootNavigatorKey = GlobalKey<NavigatorState>();
 GoRouter router = GoRouter(
   navigatorKey: _rootNavigatorKey,
   debugLogDiagnostics: kDebugMode,
-  initialLocation: HomeView.path,
+  initialLocation: SplashView.path,
   observers: [BotToastNavigatorObserver()],
   routes: [
+    GoRoute(
+      path: SplashView.path,
+      name: SplashView.name,
+      pageBuilder: (context, state) => NoTransitionPage(
+        key: state.pageKey,
+        child: const SplashView(),
+      ),
+    ),
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) {
         return SelectionArea(

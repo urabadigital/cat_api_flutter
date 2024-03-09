@@ -20,18 +20,24 @@ mixin _$HomeEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() loadCatList,
+    required TResult Function() getImageUrl,
+    required TResult Function() refreshCats,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? loadCatList,
+    TResult? Function()? getImageUrl,
+    TResult? Function()? refreshCats,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? loadCatList,
+    TResult Function()? getImageUrl,
+    TResult Function()? refreshCats,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +45,24 @@ mixin _$HomeEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_LoadCatList value) loadCatList,
+    required TResult Function(_GetImageUrl value) getImageUrl,
+    required TResult Function(_RefreshCats value) refreshCats,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_LoadCatList value)? loadCatList,
+    TResult? Function(_GetImageUrl value)? getImageUrl,
+    TResult? Function(_RefreshCats value)? refreshCats,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_LoadCatList value)? loadCatList,
+    TResult Function(_GetImageUrl value)? getImageUrl,
+    TResult Function(_RefreshCats value)? refreshCats,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +125,8 @@ class _$StartedImpl implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() loadCatList,
+    required TResult Function() getImageUrl,
+    required TResult Function() refreshCats,
   }) {
     return started();
   }
@@ -122,6 +136,8 @@ class _$StartedImpl implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? loadCatList,
+    TResult? Function()? getImageUrl,
+    TResult? Function()? refreshCats,
   }) {
     return started?.call();
   }
@@ -131,6 +147,8 @@ class _$StartedImpl implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? loadCatList,
+    TResult Function()? getImageUrl,
+    TResult Function()? refreshCats,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -144,6 +162,8 @@ class _$StartedImpl implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_LoadCatList value) loadCatList,
+    required TResult Function(_GetImageUrl value) getImageUrl,
+    required TResult Function(_RefreshCats value) refreshCats,
   }) {
     return started(this);
   }
@@ -153,6 +173,8 @@ class _$StartedImpl implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_LoadCatList value)? loadCatList,
+    TResult? Function(_GetImageUrl value)? getImageUrl,
+    TResult? Function(_RefreshCats value)? refreshCats,
   }) {
     return started?.call(this);
   }
@@ -162,6 +184,8 @@ class _$StartedImpl implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_LoadCatList value)? loadCatList,
+    TResult Function(_GetImageUrl value)? getImageUrl,
+    TResult Function(_RefreshCats value)? refreshCats,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -215,6 +239,8 @@ class _$LoadCatListImpl implements _LoadCatList {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() loadCatList,
+    required TResult Function() getImageUrl,
+    required TResult Function() refreshCats,
   }) {
     return loadCatList();
   }
@@ -224,6 +250,8 @@ class _$LoadCatListImpl implements _LoadCatList {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? loadCatList,
+    TResult? Function()? getImageUrl,
+    TResult? Function()? refreshCats,
   }) {
     return loadCatList?.call();
   }
@@ -233,6 +261,8 @@ class _$LoadCatListImpl implements _LoadCatList {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? loadCatList,
+    TResult Function()? getImageUrl,
+    TResult Function()? refreshCats,
     required TResult orElse(),
   }) {
     if (loadCatList != null) {
@@ -246,6 +276,8 @@ class _$LoadCatListImpl implements _LoadCatList {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_LoadCatList value) loadCatList,
+    required TResult Function(_GetImageUrl value) getImageUrl,
+    required TResult Function(_RefreshCats value) refreshCats,
   }) {
     return loadCatList(this);
   }
@@ -255,6 +287,8 @@ class _$LoadCatListImpl implements _LoadCatList {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_LoadCatList value)? loadCatList,
+    TResult? Function(_GetImageUrl value)? getImageUrl,
+    TResult? Function(_RefreshCats value)? refreshCats,
   }) {
     return loadCatList?.call(this);
   }
@@ -264,6 +298,8 @@ class _$LoadCatListImpl implements _LoadCatList {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_LoadCatList value)? loadCatList,
+    TResult Function(_GetImageUrl value)? getImageUrl,
+    TResult Function(_RefreshCats value)? refreshCats,
     required TResult orElse(),
   }) {
     if (loadCatList != null) {
@@ -278,8 +314,237 @@ abstract class _LoadCatList implements HomeEvent {
 }
 
 /// @nodoc
+abstract class _$$GetImageUrlImplCopyWith<$Res> {
+  factory _$$GetImageUrlImplCopyWith(
+          _$GetImageUrlImpl value, $Res Function(_$GetImageUrlImpl) then) =
+      __$$GetImageUrlImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetImageUrlImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$GetImageUrlImpl>
+    implements _$$GetImageUrlImplCopyWith<$Res> {
+  __$$GetImageUrlImplCopyWithImpl(
+      _$GetImageUrlImpl _value, $Res Function(_$GetImageUrlImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetImageUrlImpl implements _GetImageUrl {
+  const _$GetImageUrlImpl();
+
+  @override
+  String toString() {
+    return 'HomeEvent.getImageUrl()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetImageUrlImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() loadCatList,
+    required TResult Function() getImageUrl,
+    required TResult Function() refreshCats,
+  }) {
+    return getImageUrl();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? loadCatList,
+    TResult? Function()? getImageUrl,
+    TResult? Function()? refreshCats,
+  }) {
+    return getImageUrl?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? loadCatList,
+    TResult Function()? getImageUrl,
+    TResult Function()? refreshCats,
+    required TResult orElse(),
+  }) {
+    if (getImageUrl != null) {
+      return getImageUrl();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_LoadCatList value) loadCatList,
+    required TResult Function(_GetImageUrl value) getImageUrl,
+    required TResult Function(_RefreshCats value) refreshCats,
+  }) {
+    return getImageUrl(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_LoadCatList value)? loadCatList,
+    TResult? Function(_GetImageUrl value)? getImageUrl,
+    TResult? Function(_RefreshCats value)? refreshCats,
+  }) {
+    return getImageUrl?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_LoadCatList value)? loadCatList,
+    TResult Function(_GetImageUrl value)? getImageUrl,
+    TResult Function(_RefreshCats value)? refreshCats,
+    required TResult orElse(),
+  }) {
+    if (getImageUrl != null) {
+      return getImageUrl(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetImageUrl implements HomeEvent {
+  const factory _GetImageUrl() = _$GetImageUrlImpl;
+}
+
+/// @nodoc
+abstract class _$$RefreshCatsImplCopyWith<$Res> {
+  factory _$$RefreshCatsImplCopyWith(
+          _$RefreshCatsImpl value, $Res Function(_$RefreshCatsImpl) then) =
+      __$$RefreshCatsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RefreshCatsImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$RefreshCatsImpl>
+    implements _$$RefreshCatsImplCopyWith<$Res> {
+  __$$RefreshCatsImplCopyWithImpl(
+      _$RefreshCatsImpl _value, $Res Function(_$RefreshCatsImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RefreshCatsImpl implements _RefreshCats {
+  const _$RefreshCatsImpl();
+
+  @override
+  String toString() {
+    return 'HomeEvent.refreshCats()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$RefreshCatsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() loadCatList,
+    required TResult Function() getImageUrl,
+    required TResult Function() refreshCats,
+  }) {
+    return refreshCats();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? loadCatList,
+    TResult? Function()? getImageUrl,
+    TResult? Function()? refreshCats,
+  }) {
+    return refreshCats?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? loadCatList,
+    TResult Function()? getImageUrl,
+    TResult Function()? refreshCats,
+    required TResult orElse(),
+  }) {
+    if (refreshCats != null) {
+      return refreshCats();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_LoadCatList value) loadCatList,
+    required TResult Function(_GetImageUrl value) getImageUrl,
+    required TResult Function(_RefreshCats value) refreshCats,
+  }) {
+    return refreshCats(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_LoadCatList value)? loadCatList,
+    TResult? Function(_GetImageUrl value)? getImageUrl,
+    TResult? Function(_RefreshCats value)? refreshCats,
+  }) {
+    return refreshCats?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_LoadCatList value)? loadCatList,
+    TResult Function(_GetImageUrl value)? getImageUrl,
+    TResult Function(_RefreshCats value)? refreshCats,
+    required TResult orElse(),
+  }) {
+    if (refreshCats != null) {
+      return refreshCats(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RefreshCats implements HomeEvent {
+  const factory _RefreshCats() = _$RefreshCatsImpl;
+}
+
+/// @nodoc
 mixin _$HomeState {
   Failure? get failure => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
   List<CatEntity> get cat => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -292,7 +557,7 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
-  $Res call({Failure? failure, List<CatEntity> cat});
+  $Res call({Failure? failure, bool isLoading, List<CatEntity> cat});
 }
 
 /// @nodoc
@@ -309,6 +574,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   @override
   $Res call({
     Object? failure = freezed,
+    Object? isLoading = null,
     Object? cat = null,
   }) {
     return _then(_value.copyWith(
@@ -316,6 +582,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as Failure?,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
       cat: null == cat
           ? _value.cat
           : cat // ignore: cast_nullable_to_non_nullable
@@ -332,7 +602,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       __$$InitialImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Failure? failure, List<CatEntity> cat});
+  $Res call({Failure? failure, bool isLoading, List<CatEntity> cat});
 }
 
 /// @nodoc
@@ -347,6 +617,7 @@ class __$$InitialImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? failure = freezed,
+    Object? isLoading = null,
     Object? cat = null,
   }) {
     return _then(_$InitialImpl(
@@ -354,6 +625,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as Failure?,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
       cat: null == cat
           ? _value._cat
           : cat // ignore: cast_nullable_to_non_nullable
@@ -365,11 +640,17 @@ class __$$InitialImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$InitialImpl implements _Initial {
-  const _$InitialImpl({this.failure, final List<CatEntity> cat = const []})
+  const _$InitialImpl(
+      {this.failure,
+      this.isLoading = false,
+      final List<CatEntity> cat = const []})
       : _cat = cat;
 
   @override
   final Failure? failure;
+  @override
+  @JsonKey()
+  final bool isLoading;
   final List<CatEntity> _cat;
   @override
   @JsonKey()
@@ -381,7 +662,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'HomeState(failure: $failure, cat: $cat)';
+    return 'HomeState(failure: $failure, isLoading: $isLoading, cat: $cat)';
   }
 
   @override
@@ -390,12 +671,14 @@ class _$InitialImpl implements _Initial {
         (other.runtimeType == runtimeType &&
             other is _$InitialImpl &&
             (identical(other.failure, failure) || other.failure == failure) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
             const DeepCollectionEquality().equals(other._cat, _cat));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, failure, const DeepCollectionEquality().hash(_cat));
+  int get hashCode => Object.hash(runtimeType, failure, isLoading,
+      const DeepCollectionEquality().hash(_cat));
 
   @JsonKey(ignore: true)
   @override
@@ -405,11 +688,15 @@ class _$InitialImpl implements _Initial {
 }
 
 abstract class _Initial implements HomeState {
-  const factory _Initial({final Failure? failure, final List<CatEntity> cat}) =
-      _$InitialImpl;
+  const factory _Initial(
+      {final Failure? failure,
+      final bool isLoading,
+      final List<CatEntity> cat}) = _$InitialImpl;
 
   @override
   Failure? get failure;
+  @override
+  bool get isLoading;
   @override
   List<CatEntity> get cat;
   @override

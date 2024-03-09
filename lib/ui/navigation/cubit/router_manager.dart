@@ -1,9 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:injectable/injectable.dart';
 
 import 'router.dart';
 
-
+@lazySingleton
 class RouterManager extends Cubit<GoRouter> {
   RouterManager() : super(router);
 
@@ -13,6 +14,10 @@ class RouterManager extends Cubit<GoRouter> {
 
   void push(String route) {
     state.push(route);
+  }
+
+  void go(String route, {Object? extra}) {
+    state.go(route, extra: extra);
   }
 
   void goNamed(

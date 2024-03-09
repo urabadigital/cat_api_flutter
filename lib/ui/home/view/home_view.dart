@@ -14,7 +14,7 @@ import '../bloc/home_bloc.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
-  static const String path = '/home';
+  static const String path = '/';
   static const String name = 'home';
 
   static Widget create() => BlocProvider(

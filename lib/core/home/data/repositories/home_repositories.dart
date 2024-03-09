@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:either_dart/either.dart';
 import 'package:injectable/injectable.dart';
+import 'package:pragma/core/home/data/models/cat_detail.dart';
 
 import '../../../common/error/error.dart';
 import '../../domain/entities/entities.dart';
@@ -22,6 +23,58 @@ class HomeRepositoryImpl implements IHomeRepository {
       return Right(list);
     } on BaseClientException catch (e) {
       log(e.toString());
+      if (e.type == 'SocketException') {
+        return const Left(NetworkFailure());
+      }
+      if (e.type == 'TimeoutException') {
+        return const Left(TimeOutFailure());
+      }
+      if (e.type == 'UnAuthorization') {
+        return const Left(AuthFailure());
+      }
+      return const Left(AnotherFailure());
+    } catch (e) {
+      log(e.toString());
+      return const Left(AnotherFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<CatEntity>>> getImageList(
+      List<CatEntity> catList) async {
+    try {
+      final List<CatEntity> list = await homeDatasource.getImageList(catList);
+      return Right(list);
+    } on BaseClientException catch (e) {
+      log(e.toString());
+      if (e.type == 'SocketException') {
+        return const Left(NetworkFailure());
+      }
+      if (e.type == 'TimeoutException') {
+        return const Left(TimeOutFailure());
+      }
+      if (e.type == 'UnAuthorization') {
+        return const Left(AuthFailure());
+      }
+      return const Left(AnotherFailure());
+    } catch (e) {
+      log(e.toString());
+      return const Left(AnotherFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, CatDetailModel>> getCatDetail(
+      String referenceImageId) async {
+    try {
+      final CatDetailModel catDetail =
+          await homeDatasource.getCatDetail(referenceImageId);
+      return Right(catDetail.toEntitie());
+    } on BaseClientException catch (e) {
+      log(e.toString());
+      if (e.type == 'DataNull') {
+        return Left(DataNull());
+      }
       if (e.type == 'SocketException') {
         return const Left(NetworkFailure());
       }

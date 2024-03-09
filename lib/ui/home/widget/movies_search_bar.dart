@@ -19,10 +19,10 @@ class _SearchBarState extends State<MoviesSearchBar> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 70,
+      height: 80,
       child: Center(
         child: Container(
-          margin: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
+          margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
           decoration: BoxDecoration(
             color: Theme.of(context).hintColor.withOpacity(0.1),
             borderRadius: const BorderRadius.all(Radius.circular(50)),
@@ -36,21 +36,22 @@ class _SearchBarState extends State<MoviesSearchBar> {
                 Expanded(
                   child: Center(
                     child: TextField(
-                        controller: _controller,
-                        style: const TextStyle(color: Colors.white),
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          contentPadding: EdgeInsets.zero,
-                          isDense: true,
-                          hintText: 'Search movies',
-                          hintStyle: TextStyle(
-                            color: Theme.of(context).hintColor.withOpacity(0.7),
-                          ),
+                      controller: _controller,
+                      style: const TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.zero,
+                        isDense: true,
+                        hintText: 'Search cats',
+                        hintStyle: TextStyle(
+                          color: Theme.of(context).hintColor.withOpacity(0.7),
                         ),
-                        onEditingComplete: () {
-                          FocusManager.instance.primaryFocus?.unfocus();
-                        },
-                        onChanged: (text) {}),
+                      ),
+                      onEditingComplete: () {
+                        FocusManager.instance.primaryFocus?.unfocus();
+                      },
+                      onChanged: (text) {},
+                    ),
                   ),
                 ),
               ],

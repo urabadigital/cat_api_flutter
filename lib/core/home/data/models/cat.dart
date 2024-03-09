@@ -11,7 +11,9 @@ class CatModel extends CatEntity {
     super.countryCodes,
     super.countryCode,
     super.description,
+    super.lifeSpan,
     super.intelligence,
+    super.adaptability,
     super.url,
     super.referenceImageId,
   });
@@ -28,11 +30,11 @@ class CatModel extends CatEntity {
         countryCodes: json['country_codes'],
         countryCode: json['country_code'],
         description: json['description'],
-        // lifeSpan: json['life_span'],
+        lifeSpan: json['life_span'],
         // indoor: json['indoor'],
         // lap: json['lap'],
         // altNames: json['alt_names'],
-        // adaptability: json['adaptability'],
+        adaptability: json['adaptability'],
         // affectionLevel: json['affection_level'],
         // childFriendly: json['child_friendly'],
         // dogFriendly: json['dog_friendly'],
@@ -56,22 +58,6 @@ class CatModel extends CatEntity {
         referenceImageId: json['reference_image_id'],
         url: json['url'],
       );
-
-  CatModel copyWith({
-    String? url,
-  }) {
-    return CatModel(
-      weight: weight,
-      id: id,
-      name: name,
-      origin: origin,
-      countryCode: countryCode,
-      countryCodes: countryCodes,
-      description: description,
-      intelligence: intelligence,
-      url: url ?? this.url,
-    );
-  }
 }
 
 extension CastMapper on CatModel {
@@ -84,6 +70,8 @@ extension CastMapper on CatModel {
       countryCode: countryCode,
       countryCodes: countryCodes,
       description: description,
+      adaptability: adaptability,
+      lifeSpan: lifeSpan,
       intelligence: intelligence,
       url: url,
       referenceImageId: referenceImageId,

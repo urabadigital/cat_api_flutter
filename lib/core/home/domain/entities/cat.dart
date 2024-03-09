@@ -81,6 +81,25 @@ class CatEntity extends Equatable {
   final String? referenceImageId;
   final String? url;
 
+  CatEntity copyWith({
+    String? url,
+  }) {
+    return CatEntity(
+      weight: weight,
+      id: id,
+      name: name,
+      origin: origin,
+      countryCode: countryCode,
+      countryCodes: countryCodes,
+      description: description,
+      intelligence: intelligence,
+      referenceImageId: referenceImageId,
+      adaptability: adaptability,
+      lifeSpan: lifeSpan,
+      url: url ?? this.url,
+    );
+  }
+
   @override
   List<Object?> get props => [
         weight,

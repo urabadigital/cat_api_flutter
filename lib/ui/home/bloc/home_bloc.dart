@@ -16,6 +16,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       : _homeUseCase = homeUseCase,
         super(const _Initial()) {
     on<_LoadCatList>(_getCatList);
+    on<_GetImageUrl>(_getImageUrl);
+  }
+
+  Future<void> refreshCats() async {
+    add(const _GetImageUrl());
   }
 
   Future<void> _getCatList(_LoadCatList event, Emitter<HomeState> emit) async {
@@ -25,6 +30,16 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         emit(state.copyWith(failure: failure));
       case Right(value: List<CatEntity> cat):
         emit(state.copyWith(cat: cat));
+        add(const _GetImageUrl());
     }
+  }
+
+  Future<void> _getImageUrl(_GetImageUrl event, Emitter<HomeState> emit) async {
+    emit(state.copyWith(isLoading: true));
+    final either = await _homeUseCase.getImageList(state.cat);
+    either.fold(
+      (failure) => emit(state.copyWith(failure: failure, isLoading: false)),
+      (newlist) => emit(state.copyWith(cat: newlist, isLoading: false)),
+    );
   }
 }

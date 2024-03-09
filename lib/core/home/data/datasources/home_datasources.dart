@@ -1,6 +1,8 @@
 import 'package:injectable/injectable.dart';
 import 'package:pragma/core/common/utils/extension/http.dart';
 import 'package:pragma/core/common/utils/extension/string.dart';
+import 'package:pragma/core/home/data/models/cat_detail.dart';
+import 'package:pragma/core/home/domain/entities/entities.dart';
 
 import '../../../common/services/services.dart';
 import '../end_points.dart';
@@ -8,6 +10,8 @@ import '../models/cat.dart';
 
 abstract class IHomeDatasource {
   Future<List<CatModel>> getCatList();
+  Future<List<CatEntity>> getImageList(List<CatEntity> catList);
+  Future<CatDetailModel> getCatDetail(String referenceImageId);
 }
 
 @Injectable(as: IHomeDatasource)
@@ -21,31 +25,36 @@ class HomeDatasource implements IHomeDatasource {
   @override
   Future<List<CatModel>> getCatList() async {
     try {
-      List<CatModel> catList = (await baseClient.get(
+      return (await baseClient.get(
         path: EndPoint.breedsApi,
       ))!
           .withListConverter(
         callback: CatModel.fromJson,
       );
-
-      List<CatModel> newlist = [];
-
-      for (var element in catList) {
-        if (element.referenceImageId != null) {
-          final url = await _getImageUrl(element.referenceImageId ?? '');
-          final edit = element.copyWith(url: url);
-          newlist.add(edit);
-        } else {
-          newlist.add(element);
-        }
-      }
-      return newlist;
     } on Exception catch (_) {
       rethrow;
     }
   }
 
-  Future<String?> _getImageUrl(String idImages) async {
+  @override
+  Future<List<CatEntity>> getImageList(List<CatEntity> catList) async {
+    List<CatEntity> newlist = [];
+
+    for (var element in catList) {
+      if (element.referenceImageId != null) {
+        final url = await getImageUrl(element.referenceImageId ?? '');
+
+        final edit = element.copyWith(url: url);
+        newlist.add(edit);
+      } else {
+        final empty = element.copyWith(url: '');
+        newlist.add(empty);
+      }
+    }
+    return newlist;
+  }
+
+  Future<String?> getImageUrl(String idImages) async {
     Map<String, dynamic> response = (await baseClient.get(
       path: EndPoint.images.toParamUrl(<String, dynamic>{
         'idImages': idImages,
@@ -57,40 +66,19 @@ class HomeDatasource implements IHomeDatasource {
     return response['url'] as String?;
   }
 
-  // @override
-  // Future<DetailModel> getMovieDetail(String id) async {
-  //   try {
-  //     Map<String, dynamic> response = (await baseClient.get(
-  //             path: EndPoint.detailMovieApi.toParamUrl(<String, String>{
-  //       'id': id,
-  //     })!))!
-  //         .withConverter<Map<String, dynamic>>(
-  //       callback: (Map<String, dynamic> json) => json,
-  //     );
-  //     response.addAll({
-  //       'youtube_id': await getYoutubeId(id),
-  //     });
-
-  //     return DetailModel.fromJson(response);
-  //   } on Exception catch (_) {
-  //     rethrow;
-  //   }
-  // }
-
-  // Future<String?> getYoutubeId(String id) async {
-  //   try {
-  //     Map<String, dynamic> response = (await baseClient.get(
-  //       path: EndPoint.detailMovieApiVideos.toParamUrl(<String, String>{
-  //         'id': id,
-  //       })!,
-  //     ))!
-  //         .withConverter<Map<String, dynamic>>(
-  //       callback: (Map<String, dynamic> json) => json,
-  //     );
-
-  //     return response['results'][0]['key'] as String?;
-  //   } on Exception catch (_) {
-  //     rethrow;
-  //   }
-  // }
+  @override
+  Future<CatDetailModel> getCatDetail(String referenceImageId) async {
+    try {
+      return (await baseClient.get(
+        path: EndPoint.images.toParamUrl(<String, String>{
+          'idImages': referenceImageId,
+        })!,
+      ))!
+          .withConverter<CatDetailModel>(
+        callback: CatDetailModel.fromJson,
+      );
+    } on Exception catch (_) {
+      rethrow;
+    }
+  }
 }
