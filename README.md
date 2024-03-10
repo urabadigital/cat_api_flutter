@@ -2,15 +2,32 @@
 
 A new Flutter project.
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
+<br>
+<p align="center">
+<img src="screenshots/Screenshot_1710106848.png" width="30%">
+<img src="screenshots/Screenshot_1710105897.png" width="30%">
+<img src="screenshots/Screenshot_1710105886.png" width="30%">
+</p>
 
-A few resources to get you started if this is your first Flutter project:
+## How to use
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+To clone and run this application, you'll need [Git](https://git-scm.com/downloads) and [Flutter](https://flutter.dev/docs/get-started/install) installed on your computer. From your command line:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+# Clone this repository
+$ git clone https://github.com/urabadigital/cat_api_flutter.git
+
+# Go into the repository
+$ cd cat_api_flutter
+
+# Install dependencies
+$ flutter pub get
+
+# generate codes
+$ dart run build_runner build --delete-conflicting-outputs
+
+# Run the app
+$ flutter run
+```
