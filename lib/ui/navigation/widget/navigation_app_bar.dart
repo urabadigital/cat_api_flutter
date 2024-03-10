@@ -49,7 +49,7 @@ class NavigationAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
       ),
-      centerTitle: false,
+      centerTitle: true,
       elevation: 4,
       actions: const [
         ThemeModeButton.icon(),

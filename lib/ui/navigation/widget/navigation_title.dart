@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:responsive_framework/responsive_framework.dart';
 
 import '../../../my_app.dart';
 import '../../home/view/home_view.dart';
@@ -16,15 +15,12 @@ class NavigationTitle extends StatelessWidget {
     return SelectionContainer.disabled(
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
-        child: Visibility(
-          visible: ResponsiveBreakpoints.of(context).largerThan(MOBILE),
-          child: GestureDetector(
-            onTap: () => context.go(HomeView.path),
-            child: Text(
-              MyApp.title,
-              style: theme.textTheme.bodyLarge?.copyWith(
-                fontWeight: FontWeight.w700,
-              ),
+        child: GestureDetector(
+          onTap: () => context.go(HomeView.path),
+          child: Text(
+            MyApp.title,
+            style: theme.textTheme.bodyLarge?.copyWith(
+              fontWeight: FontWeight.w700,
             ),
           ),
         ),
