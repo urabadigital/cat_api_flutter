@@ -28,6 +28,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   }
 
   Future<void> _getCatList(_LoadCatList event, Emitter<HomeState> emit) async {
+    emit(state.copyWith(isLoading: true));
     final either = await _homeUseCase.getCatList();
     switch (either) {
       case Left(value: Failure failure):
