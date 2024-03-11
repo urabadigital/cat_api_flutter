@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
 class ContainerShimmer extends StatelessWidget {
-  const ContainerShimmer({super.key, this.height});
+  const ContainerShimmer({super.key, this.height, this.width});
   final double? height;
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,7 @@ class ContainerShimmer extends StatelessWidget {
       baseColor: Theme.of(context).hintColor,
       highlightColor: Theme.of(context).hintColor.withOpacity(0.5),
       child: Container(
-        width: double.infinity,
+        width: width ?? double.infinity,
         height: height,
         color: Theme.of(context).hintColor.withOpacity(0.2),
       ),

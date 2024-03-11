@@ -21,7 +21,7 @@ class _CatSearchBarState extends State<CatSearchBar> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 80,
+      height: 90,
       child: Center(
         child: Container(
           margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
@@ -33,20 +33,22 @@ class _CatSearchBarState extends State<CatSearchBar> {
             padding: const EdgeInsets.only(left: 10),
             child: Row(
               children: [
-                const Icon(Icons.search, color: Colors.grey),
+                Icon(Icons.search,
+                    color: Theme.of(context).colorScheme.secondary),
                 const SizedBox(width: 10),
                 Expanded(
                   child: Center(
                     child: TextField(
                       controller: _controller,
-                      style: const TextStyle(color: Colors.white),
+                      style: TextStyle(
+                          color: Theme.of(context).colorScheme.secondary),
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.zero,
                         isDense: true,
                         hintText: 'Search cats',
                         hintStyle: TextStyle(
-                          color: Theme.of(context).hintColor.withOpacity(0.7),
+                          color: Theme.of(context).colorScheme.secondary,
                         ),
                       ),
                       onEditingComplete: () {

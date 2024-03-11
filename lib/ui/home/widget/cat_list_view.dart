@@ -1,5 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pragma/core/common/const/constant.dart';
 import 'package:pragma/ui/home/bloc/home_bloc.dart';
 import 'package:pragma/ui/home/view/detail_view.dart';
 import 'package:pragma/ui/home/widget/shimmer.dart';
@@ -85,43 +87,56 @@ class CatListView extends StatelessWidget {
                             ),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(20),
-                              child: cat.url == null ||
-                                      (cat.url?.isEmpty ?? false)
-                                  ? const ContainerShimmer(
-                                      height: 250,
-                                    )
-                                  : SizedBox(
-                                      height: 250,
-                                      width: double.infinity,
-                                      child: Image.network(
-                                        '${cat.url}',
-                                        filterQuality: FilterQuality.high,
-                                        fit: BoxFit.cover,
-                                        loadingBuilder:
-                                            (context, child, loadingProgress) {
-                                          if (loadingProgress == null) {
-                                            return child;
-                                          }
-                                          return Center(
-                                            child: CircularProgressIndicator(
-                                              value: loadingProgress
-                                                          .expectedTotalBytes !=
-                                                      null
-                                                  ? loadingProgress
-                                                          .cumulativeBytesLoaded /
-                                                      loadingProgress
-                                                          .expectedTotalBytes!
-                                                  : null,
-                                            ),
-                                          );
-                                        },
-                                        errorBuilder:
-                                            (context, error, stackTrace) =>
-                                                const Center(
-                                          child: Icon(Icons.error),
-                                        ),
-                                      ),
+                              child: CachedNetworkImage(
+                                filterQuality: FilterQuality.medium,
+                                fit: BoxFit.cover,
+                                height: 250,
+                                width: double.infinity,
+                                // imageUrl: cat.url ?? '',
+                                imageUrl:
+                                    '${Constant.baseImageUrl}${cat.referenceImageId}.jpg',
+                                placeholder: (context, url) =>
+                                    const ContainerShimmer(
+                                  height: 250,
+                                ),
+                                errorWidget: (context, url, error) => Container(
+                                  height: 150,
+                                  color: Colors.grey.withOpacity(0.5),
+                                  child: const Center(
+                                    child: Icon(
+                                      Icons.error,
                                     ),
+                                  ),
+                                ),
+                                // Image.network(
+                                //   '${cat.url}',
+                                //   '${Constant.baseImageUrl}${cat.referenceImageId}.jpg',
+                                //   filterQuality: FilterQuality.high,
+                                //   fit: BoxFit.cover,
+                                //   loadingBuilder:
+                                //       (context, child, loadingProgress) {
+                                //     if (loadingProgress == null) {
+                                //       return child;
+                                //     }
+                                //     return Center(
+                                //       child: CircularProgressIndicator(
+                                //         value: loadingProgress
+                                //                     .expectedTotalBytes !=
+                                //                 null
+                                //             ? loadingProgress
+                                //                     .cumulativeBytesLoaded /
+                                //                 loadingProgress
+                                //                     .expectedTotalBytes!
+                                //             : null,
+                                //       ),
+                                //     );
+                                //   },
+                                //   errorBuilder: (context, error, stackTrace) =>
+                                //       const Center(
+                                //     child: Icon(Icons.error),
+                                //   ),
+                                // ),
+                              ),
                             ),
                           ),
                           Row(

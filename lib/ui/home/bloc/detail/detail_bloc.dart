@@ -21,6 +21,7 @@ class DetailBloc extends Bloc<DetailEvent, DetailState> {
   }
 
   Future<void> _getDetail(_Detail event, Emitter<DetailState> emit) async {
+    emit(state.copyWith(isLoading: true));
     if (event.cat.referenceImageId == null ||
         (event.cat.referenceImageId?.isEmpty ?? false)) {
       final catDetail = CatDetailModel(
@@ -43,15 +44,15 @@ class DetailBloc extends Bloc<DetailEvent, DetailState> {
           )
         ],
       );
-      emit(state.copyWith(cat: catDetail));
+      emit(state.copyWith(cat: catDetail, isLoading: false));
     } else {
       final either =
           await _homeUseCase.getCatDetail(event.cat.referenceImageId ?? '');
       switch (either) {
         case Left(value: Failure failure):
-          emit(state.copyWith(failure: failure));
+          emit(state.copyWith(failure: failure, isLoading: false));
         case Right(value: CatDetailModel cat):
-          emit(state.copyWith(cat: cat));
+          emit(state.copyWith(cat: cat, isLoading: false));
       }
     }
   }
