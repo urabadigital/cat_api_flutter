@@ -20,7 +20,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com/downloa
 $ git clone https://github.com/urabadigital/cat_api_flutter.git
 
 # Go into the repository
-$ cd cat_api_flutter
+$ cd flutter_cat_bloc
 
 # Install dependencies
 $ flutter pub get
